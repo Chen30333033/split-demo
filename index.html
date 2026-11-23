@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>平帳｜分帳小工具</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="layout">
+    <header class="intro">
+      <p class="category">分帳小工具</p>
+      <h1>平帳</h1>
+      <p>聚餐、出遊一起花了多少？輸入總金額和分帳人數，就能算出每人應付的金額。</p>
+    </header>
+
+    <section class="calculator" aria-labelledby="calculator-heading">
+      <h2 id="calculator-heading">平均分帳</h2>
+      <form id="split-form" novalidate>
+        <div class="fields">
+          <div>
+            <label for="total">總金額</label>
+            <div class="amount-field">
+              <input id="total" name="total" inputmode="decimal" maxlength="24" required aria-describedby="currency">
+              <span id="currency">新台幣</span>
+            </div>
+          </div>
+          <div>
+            <label for="people">人數</label>
+            <input id="people" name="people" inputmode="numeric" maxlength="24" required>
+          </div>
+        </div>
+        <div class="actions">
+          <button type="submit">計算</button>
+          <button type="reset">清空</button>
+        </div>
+        <output id="result" for="total people" aria-live="polite"></output>
+        <p id="error" role="alert"></p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
